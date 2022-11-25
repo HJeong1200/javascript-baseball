@@ -6,10 +6,10 @@ const View = {
     Console.print(Message.START);
   },
 
-  printAnswerPrompt(errorCallback, callback) {
+  printAnswerPrompt(errorCallback, baseballGame) {
     Console.readLine(Message.ANSWERPROMPT, (input) => {
       errorCallback(input);
-      callback(input);
+      baseballGame.checkAnswer(input);
     });
   },
 };

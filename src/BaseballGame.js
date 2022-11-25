@@ -21,7 +21,35 @@ class BaseballGame {
   }
 
   checkAnswer(input) {
-    console.log("input: ", input);
+    input = input.split("");
+    const strike = this.checkStrike(input);
+    const ball = this.checkBall(input);
+    console.log("strike: ", strike, "ball: ", ball);
+  }
+
+  checkStrike(input) {
+    let count = 0;
+
+    for (let i = 0; i < input.length; i++) {
+      const num = Number(input[i]);
+
+      if (num === this.#answer[i]) count++;
+    }
+
+    return count;
+  }
+
+  checkBall(input) {
+    let count = 0;
+
+    for (let i = 0; i < input.length; i++) {
+      const num = Number(input[i]);
+
+      if (this.#answer.includes(num) && this.#answer.indexOf(num) !== i)
+        count++;
+    }
+
+    return count;
   }
 
   getAnswer() {

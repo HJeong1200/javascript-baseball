@@ -10,7 +10,7 @@ const Controller = {
   },
 
   checkAnswer(baseballGame) {
-    View.printAnswerPrompt(Errors.validAnswerCheck, baseballGame.checkAnswer);
+    View.printAnswerPrompt(Errors.validAnswerCheck, baseballGame);
   },
 };
 
