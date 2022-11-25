@@ -20,6 +20,10 @@ class BaseballGame {
     return answer;
   }
 
+  checkAnswer(input) {
+    console.log("input: ", input);
+  }
+
   getAnswer() {
     return this.#answer;
   }

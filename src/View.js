@@ -5,6 +5,13 @@ const View = {
   printStart() {
     Console.print(Message.START);
   },
+
+  printAnswerPrompt(errorCallback, callback) {
+    Console.readLine(Message.ANSWERPROMPT, (input) => {
+      errorCallback(input);
+      callback(input);
+    });
+  },
 };
 
 module.exports = View;
