@@ -1,10 +1,10 @@
 const View = require("./View");
 const BaseballGame = require("./BaseballGame");
 const Errors = require("./Error");
+const { Console } = require("@woowacourse/mission-utils");
 
 const Controller = {
   startGame() {
-    View.printStart();
     const baseballGame = new BaseballGame();
     this.checkAnswer(baseballGame);
   },
@@ -22,11 +22,19 @@ const Controller = {
 
     if (strike === 3) {
       View.printResult({ strike, ball });
-      View.printSuccess();
+      this.checkRestart();
     } else {
       View.printResult({ strike, ball });
       this.checkAnswer(baseballGame);
     }
+  },
+
+  checkRestart() {
+    View.printSuccess((input) => {
+      Errors.validRestartCheck(input);
+      if (input === "1") return this.startGame();
+      return Console.close();
+    });
   },
 };
 

@@ -11,6 +11,11 @@ const Errors = {
 
     if (numSet.size !== 3) throw new Error();
   },
+
+  validRestartCheck(num) {
+    if (num === "1" || num === "2") return;
+    throw new Error();
+  },
 };
 
 module.exports = Errors;

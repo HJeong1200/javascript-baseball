@@ -17,8 +17,9 @@ const View = {
     return Console.print(`${ball + Message.BALL} ${strike + Message.STRIKE}`);
   },
 
-  printSuccess() {
+  printSuccess(callback) {
     Console.print(Message.SUCCESSPROMPT);
+    Console.readLine(Message.RESTARTPROMPT, callback);
   },
 };
 
