@@ -18,7 +18,15 @@ const Controller = {
   },
 
   checkResult(baseballGame, result) {
-    console.log(result);
+    const { strike, ball } = result;
+
+    if (strike === 3) {
+      View.printResult({ strike, ball });
+      View.printSuccess();
+    } else {
+      View.printResult({ strike, ball });
+      this.checkAnswer(baseballGame);
+    }
   },
 };
 
