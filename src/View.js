@@ -6,11 +6,8 @@ const View = {
     Console.print(Message.START);
   },
 
-  printAnswerPrompt(errorCallback, baseballGame) {
-    Console.readLine(Message.ANSWERPROMPT, (input) => {
-      errorCallback(input);
-      baseballGame.checkAnswer(input);
-    });
+  printAnswerPrompt(callback) {
+    Console.readLine(Message.ANSWERPROMPT, callback);
   },
 };
 

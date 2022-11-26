@@ -24,7 +24,7 @@ class BaseballGame {
     input = input.split("");
     const strike = this.checkStrike(input);
     const ball = this.checkBall(input);
-    console.log("strike: ", strike, "ball: ", ball);
+    return { strike, ball };
   }
 
   checkStrike(input) {

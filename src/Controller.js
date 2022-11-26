@@ -10,7 +10,15 @@ const Controller = {
   },
 
   checkAnswer(baseballGame) {
-    View.printAnswerPrompt(Errors.validAnswerCheck, baseballGame);
+    return View.printAnswerPrompt((input) => {
+      Errors.validAnswerCheck(input);
+      const result = baseballGame.checkAnswer(input);
+      this.checkResult(baseballGame, result);
+    });
+  },
+
+  checkResult(baseballGame, result) {
+    console.log(result);
   },
 };
 
